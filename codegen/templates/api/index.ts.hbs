@@ -6,7 +6,7 @@ import Tokens from './Tokens';
 
 export {
     {{#resources}}
-    {{this.id}},
+    {{#if (isSubscriptionIntegration this.id) }}{{this.id}} as SubscriptionEvent{{else}}{{this.id}}{{/if}},
     {{/resources}}
     Auth,
     Tokens

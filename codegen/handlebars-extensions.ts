@@ -24,6 +24,10 @@ function handlebarsExt(Handlebars) {
       return types.map(t => `${t} = any`).join(', ')
     }
   )
+
+  Handlebars.registerHelper('isSubscriptionIntegration', (text: any) => {
+    return text === 'Subscription'
+  })
 }
 
 module.exports = handlebarsExt
