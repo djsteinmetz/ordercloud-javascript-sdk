@@ -25,8 +25,13 @@ function handlebarsExt(Handlebars) {
     }
   )
 
-  Handlebars.registerHelper('isSubscriptionIntegration', (text: any) => {
-    return text === 'Subscription'
+  Handlebars.registerHelper('modifyResourceIdIfNecessary', (text: any) => {
+    switch(text) { 
+      case "Subscription": 
+        return "Subscription Integrations" 
+      default:  
+        return text 
+    }
   })
 }
 
